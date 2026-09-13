@@ -88,9 +88,36 @@ def graficar_errores(valores_N):
     plt.show()
 
 
-valores_N = range(10, 10001, 10)
-graficar_errores(valores_N)
+# valores_N = range(10, 10001, 10)
+# graficar_errores(valores_N)
 
-valores_N = range(1000, 10001, 1000)
-graficar_errores(valores_N)
+# valores_N = range(1000, 1000001, 1000)
+# graficar_errores(valores_N)
 
+error_suma_aleatoria = {
+    "Intento 1": suma_orden_aleatorio(800000)[2],
+    "Intento 2": suma_orden_aleatorio(800000)[2],
+    "Intento 3": suma_orden_aleatorio(800000)[2],
+    "Intento 4": suma_orden_aleatorio(800000)[2],
+    "Intento 5": suma_orden_aleatorio(800000)[2],
+    "Intento 6": suma_orden_aleatorio(800000)[2],
+}
+
+print("Error en suma aleatoria para N = 800000:")
+
+for intento, error in error_suma_aleatoria.items():
+    print(f"{intento}: {error}")
+    
+error_suma_menor_a_mayor = {
+    "Intento 1": suma_menor_a_mayor(800000)[2],
+    "Intento 2": suma_menor_a_mayor(800000)[2],
+    "Intento 3": suma_menor_a_mayor(800000)[2],
+    "Intento 4": suma_menor_a_mayor(800000)[2],
+    "Intento 5": suma_menor_a_mayor(800000)[2],
+    "Intento 6": suma_menor_a_mayor(800000)[2],
+}
+
+print("Error en suma menor a mayor para N = 800000:")
+
+for intento, error in error_suma_menor_a_mayor.items():
+    print(f"{intento}: {error}")
