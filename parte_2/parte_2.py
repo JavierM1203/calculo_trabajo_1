@@ -19,7 +19,7 @@ def suma(N, b):
         
     return [suma_1, suma_2, suma_3]
 
-print(suma(34, 3.0))
+# print(suma(34, 3.0))
 
 def graficar_sumas(valores_N, valores_b):
     figura, ejes = plt.subplots(2, 2, figsize=(12, 8), sharex=True)
@@ -54,9 +54,9 @@ def graficar_sumas(valores_N, valores_b):
     plt.show()
 
 
-# valores_N = range(1, 1001)
-# valores_b = [2, 3, 5, 10]
-# graficar_sumas(valores_N, valores_b)
+valores_N = range(1, 1001)
+valores_b = [2, 3, 5, 10]
+graficar_sumas(valores_N, valores_b)
 
-# valores_b = [2.0, 3.0, 5.0, 10.0]
-# graficar_sumas(valores_N, valores_b)
+valores_b = [2.0, 3.0, 5.0, 10.0]
+graficar_sumas(valores_N, valores_b)
