@@ -10,7 +10,7 @@ def calcular_error_relativo(teorico, numerico):
 def suma_mayor_a_menor(N):
     resultado_teorico = N/(N+1)
     resultado_numerico = 0
-    for k in range(N, 0, -1):
+    for k in range(1, N+1):
         termino_k = 1/(k*(k+1))
         resultado_numerico += termino_k
     error_relativo = calcular_error_relativo(resultado_teorico, resultado_numerico)
@@ -19,7 +19,7 @@ def suma_mayor_a_menor(N):
 def suma_menor_a_mayor(N):
     resultado_teorico = N/(N+1)
     resultado_numerico = 0
-    for k in range(1, N+1):
+    for k in range(N, 0, -1):
         termino_k = 1/(k*(k+1))
         resultado_numerico += termino_k
     error_relativo = calcular_error_relativo(resultado_teorico, resultado_numerico)
@@ -88,11 +88,11 @@ def graficar_errores(valores_N):
     plt.show()
 
 
-# valores_N = range(10, 10001, 10)
-# graficar_errores(valores_N)
+valores_N = range(10, 10001, 10)
+graficar_errores(valores_N)
 
-# valores_N = range(1000, 1000001, 1000)
-# graficar_errores(valores_N)
+valores_N = range(1000, 1000001, 1000)
+graficar_errores(valores_N)
 
 error_suma_aleatoria = {
     "Intento 1": suma_orden_aleatorio(800000)[2],
