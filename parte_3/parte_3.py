@@ -96,3 +96,35 @@ plt.grid(True, which="both")
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+# BONUS
+
+def suma_b_bonus(N):
+    resultado_1 = 1 - (1/(N+1))
+    resultado_2 = N/(N+1)
+    diferencia_absoluta = calcular_diferencia_absoluta(resultado_1, resultado_2)
+    return resultado_1, resultado_2, diferencia_absoluta
+
+valores_N = [1] + list(range(10, 10001, 10))
+diferencias_absolutas = []
+
+for N in valores_N:
+    _, _, diferencia_absoluta = suma_b_bonus(N)
+    diferencias_absolutas.append(diferencia_absoluta)
+
+plt.figure()
+plt.plot(
+    valores_N,
+    diferencias_absolutas,
+    marker=".",
+    linestyle="None",
+    label="Diferencia absoluta",
+)
+plt.xlabel("N")
+plt.ylabel("Diferencia absoluta")
+plt.title("Diferencia absoluta entre los resultados de la suma b")
+plt.yscale("symlog", linthresh=1e-16)
+plt.grid(True, which="both")
+plt.legend()
+plt.tight_layout()
+plt.show()
