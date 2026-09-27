@@ -1,4 +1,5 @@
 import math
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 
@@ -128,3 +129,26 @@ plt.grid(True, which="both")
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+def suma_c_bonus(k):
+    a = 1.0 / (math.sqrt(k**2 + 1.0) + k)
+    b = math.sqrt(k**2 + 1.0) - k
+    
+    diferencia_absoluta = calcular_diferencia_absoluta(a, b)
+    diferencia_relativa = calcular_error_relativo(a, b)
+    return a, b, diferencia_absoluta, diferencia_relativa
+
+valores_k = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]
+diferencias_relativas = []
+
+for k in valores_k:
+    _, _, _, diferencia_relativa = suma_c_bonus(k)
+    diferencias_relativas.append(diferencia_relativa)
+
+print(
+    "Valor de k | Diferencia relativa\n"
+    + "\n".join(
+        f"{k:10d} | {diferencia_relativa:.6e}"
+        for k, diferencia_relativa in zip(valores_k, diferencias_relativas)
+    )
+)
