@@ -60,3 +60,16 @@ graficar_sumas(valores_N, valores_b)
 
 valores_b = [2.0, 3.0, 5.0, 10.0]
 graficar_sumas(valores_N, valores_b)
+
+
+# BONUS: b <= 1
+valores_b = [0.1, 0.3, 0.5, 1.0]
+graficar_sumas(valores_N, valores_b)
+
+# BONUS: b negativo (int)
+valores_b = [-2, -3, -5, -10]
+graficar_sumas(valores_N, valores_b)
+
+# BONUS: b negativo (float)
+valores_b = [-2.0, -3.0, -5.0, -10.0]
+graficar_sumas(valores_N, valores_b)
